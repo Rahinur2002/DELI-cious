@@ -1,5 +1,13 @@
 package com.pluralsight.deli.products;
 
 public abstract class Product {
-    private product
+    private String productName;
+
+    public Product(String productName) {
+        this.productName = productName;
+    }
+
+    public abstract double getCost();
+
+
 }
