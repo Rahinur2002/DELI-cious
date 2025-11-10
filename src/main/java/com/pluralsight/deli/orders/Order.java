@@ -11,5 +11,33 @@ public class Order {
         this.products = products;
     }
 
+    public void addSandwich(){
+
+    }
+
+    public void addDrink(){
+
+    }
+
+    public void addChip(){
+
+    }
+
+    public double getTotal(){
+        return 0;
+    }
+
+    public void checkout(){
+
+    }
+
+    public void cancelOrder(){
+
+    }
+
+    public void printDisplay(){
+
+    }
+
 
 }

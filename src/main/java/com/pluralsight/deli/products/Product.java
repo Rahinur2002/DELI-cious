@@ -1,4 +1,5 @@
 package com.pluralsight.deli.products;
 
-public class Product {
+public abstract class Product {
+    private product
 }
