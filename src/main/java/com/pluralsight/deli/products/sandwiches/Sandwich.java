@@ -6,28 +6,36 @@ import com.pluralsight.deli.products.Product;
 import com.pluralsight.deli.products.sandwiches.toppings.Topping;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Sandwich extends Product {
     private SandwichSize sandwichSize;
     private BreadType bread;
-    private ArrayList<Topping> sandwichToppings;
+    private final List<Topping> sandwichToppings;
     private boolean isToasted;
 
-    public Sandwich(String productName, SandwichSize sandwichSize, BreadType bread, ArrayList<Topping> sandwichToppings, boolean isToasted) {
+
+    public Sandwich(String productName, SandwichSize sandwichSize, BreadType bread, List<Topping> sandwichToppings, boolean isToasted) {
         super(productName);
         this.sandwichSize = sandwichSize;
         this.bread = bread;
-        this.sandwichToppings = new ArrayList<>();
+        this.sandwichToppings = new ArrayList<>(sandwichToppings == null ? List.of() : sandwichToppings);
         this.isToasted = isToasted;
     }
 
-    public ArrayList<Topping> getSandwichToppings() {
-        return sandwichToppings;
+    public Sandwich(String productName, SandwichSize sandwichSize, BreadType bread, boolean isToasted) {
+        this(productName, sandwichSize, bread, new ArrayList<>(), isToasted);
     }
 
-    public void setSandwichToppings(ArrayList<Topping> sandwichToppings) {
-        this.sandwichToppings = sandwichToppings;
+    public List<Topping> getSandwichToppings() {
+        return Collections.unmodifiableList(sandwichToppings);
     }
+
+//    public void setSandwichToppings(List<Topping> sandwichToppings) {
+//        this.sandwichToppings = sandwichToppings;
+//    }
 
     public boolean isToasted() {
         return isToasted;
@@ -55,13 +63,14 @@ public class Sandwich extends Product {
 
 
     public void addTopping(Topping t){
-        sandwichToppings.add(t);
+        if (t != null) sandwichToppings.add(t);
     }
 
     public void removeTopping(Topping t){
         sandwichToppings.remove(t);
     }
 
+    @Override
     public double getCost(){
         double originalPrice = switch (sandwichSize) {
             case FOUR -> 5.50;
@@ -74,17 +83,23 @@ public class Sandwich extends Product {
         return originalPrice + toppingCost;
     }
 
-    public void printDisplay(){
+    public String printDisplay(){
+        String sandwich = sandwichToppings.isEmpty() ? "(\uD83D\uDEAB no toppings)" : sandwichToppings.stream()
+                .map(Object::toString).collect(Collectors.joining(", "));
 
+        return String.format("""
+            🥪 %s (%s, %s)
+            🔥 Toasted: %s
+            🍞 Bread: %s
+            🧂 Toppings: %s
+            💵 Total: $%.2f
+            """,
+                getProductName(), sandwichSize, bread, isToasted ? "Yes" : "No",
+                sandwich, getCost());
     }
 
     @Override
     public String toString() {
-        return "Sandwich{" +
-                "sandwichToppings=" + sandwichToppings +
-                ", isToasted=" + isToasted +
-                ", bread=" + bread +
-                ", sandwichSize=" + sandwichSize +
-                '}';
+        return printDisplay();
     }
 }
