@@ -7,13 +7,18 @@ import com.pluralsight.deli.products.sandwiches.toppings.Topping;
 public abstract class PremiumTopping extends Topping {
     private boolean hasExtra;
 
+    public PremiumTopping(String name) {
+        super(name);
+        this.hasExtra = false;
+    }
+
     public PremiumTopping(String name, boolean hasExtra) {
         super(name);
         this.hasExtra = hasExtra;
     }
 
     public boolean hasExtra(){
-        return true;
+        return this.hasExtra;
     }
 
     public void setHasExtra(boolean hasExtra) {
