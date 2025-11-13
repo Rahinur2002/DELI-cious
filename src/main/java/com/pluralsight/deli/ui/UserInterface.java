@@ -2,6 +2,9 @@ package com.pluralsight.deli.ui;
 
 import com.pluralsight.deli.common.enums.BreadType;
 import com.pluralsight.deli.common.enums.SandwichSize;
+import com.pluralsight.deli.orders.Order;
+import com.pluralsight.deli.products.sandwiches.Sandwich;
+import com.pluralsight.deli.products.sandwiches.toppings.Topping;
 
 import java.util.Calendar;
 import java.util.Scanner;
@@ -10,7 +13,9 @@ import static com.pluralsight.deli.common.Utility.Utility.printHeader;
 
 public class UserInterface {
 
-    private Scanner scanner;
+    private final Scanner scanner;
+    private Order currentOrder;
+
     public static final String RESET = "\u001B[0m";
     public static final String YELLOW = "\u001B[33m";
     public static final String GREEN = "\u001B[32m";
@@ -28,11 +33,12 @@ public class UserInterface {
             System.out.println("1. New Order.");
             System.out.println("0. Exit");
 
-            System.out.print("Enter your choice: ");
-            String choice = scanner.nextLine();
+            System.out.print("\uD83D\uDC49 Choice: ");
+            String choice = scanner.nextLine().trim();
 
             switch (choice) {
                 case "1":
+                    currentOrder = new Order();
                     orderScreen();
                     break;
                 case "0":
@@ -42,6 +48,7 @@ public class UserInterface {
                     System.out.println("Invalid choice. Please try again.");
             }
         }
+        System.out.println("Thank you! come again.");
     }
 
     public void orderScreen() {
@@ -54,25 +61,23 @@ public class UserInterface {
             System.out.println("4. Checkout");
             System.out.println("0. Cancel Order & go back home page");
 
-            System.out.print("Enter your choice: ");
-            String choice = scanner.nextLine();
+            System.out.print("\uD83D\uDC49 Choice: ");
+            String choice = scanner.next().trim();
 
             switch (choice) {
                 case "1":
                     addSandwich();
-                    break;
                 case "2":
                     addDrink();
-                    break;
                 case "3":
                     addChip();
-                    break;
                 case "4":
                     checkout();
-                    break;
-                case "0":
                     quit = true;
-                    break;
+                case "0":
+                    if(currentOrder != null) currentOrder.cancelOrder();
+                    System.out.println("\uD83D\uDDD1\uFE0F Order cancelled");
+                    quit = true;
                 default:
                     System.out.println("Invalid choice. Please try again.");
             }
@@ -81,7 +86,11 @@ public class UserInterface {
 
     public void addSandwich() {
         printHeader("Build Your Sandwich");
-        breadType();
+        SandwichSize size = sandwichSize();
+        BreadType bread = breadType();
+        boolean isToasted = false;
+
+        Sandwich s = new Sandwich("Custom Sandwich", size, bread, isToasted);
 
     }
 
@@ -99,24 +108,13 @@ public class UserInterface {
 
     private BreadType breadType() {
         while (true) {
-            System.out.println(YELLOW + "Please select your bread type:" + RESET);
+            System.out.println(YELLOW + "\uD83E\uDD56 Please select your bread type:" + RESET);
             System.out.println("1️⃣  White");
             System.out.println("2️⃣  Wheat");
             System.out.println("3️⃣  Rye");
             System.out.println("4️⃣  Wrap");
-            System.out.println("\uD83D\uDC49 Choice: ");
-            String choice = scanner.nextLine();
-            int c;
-            try {
-                c = Integer.parseInt(choice);
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid Input, please enter as a number between 1 and 4.\n");
-                continue;
-            }
-            if (c < 1 || c > 4) {
-                System.out.println("❌ Please enter a valid number between 1-4. \n");
-                continue;
-            }
+            int c = ranges("\uD83D\uDC49 Choice: ", 1, 4);
+
             return switch (c) {
                 case 1 -> BreadType.WHITE;
                 case 2 -> BreadType.WHEAT;
@@ -129,21 +127,59 @@ public class UserInterface {
 
     private SandwichSize sandwichSize(){
         while (true) {
-            System.out.println(YELLOW + "Please select your bread type:" + RESET);
-            System.out.println("1️⃣  White");
-            System.out.println("2️⃣  Wheat");
-            System.out.println("3️⃣  Rye");
-            System.out.println("4️⃣  Wrap");
-            System.out.println("\uD83D\uDC49 Choice: ");
-            String choice = scanner.nextLine();
-            int c;
-            try {
-                c = Integer.parseInt(choice);
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid Input, please enter as a number between 1 and 4.\n");
-                continue;
+            System.out.println(YELLOW + "Please select your sandwich size:" + RESET);
+            System.out.println("1️⃣  4 Inch");
+            System.out.println("2️⃣  8 Inch");
+            System.out.println("3️⃣  12 Inch");
+            int c = ranges("\uD83D\uDC49 Choice: ", 1, 3);
+
+            return switch (c) {
+                case 1 -> SandwichSize.FOUR;
+                case 2 -> SandwichSize.EIGHT;
+                case 3 -> SandwichSize.TWELVE;
+                default -> throw new IllegalStateException("Unexpected value: " + c);
+            };
+        }
+    }
+    private void toppings(Sandwich sandwich) {
+        boolean quit = false;
+        while(!false) {
+            System.out.println(CYAN + "=== Choose Toppings ===" + RESET);
+            System.out.println("1) Add Meat (premium)");
+            System.out.println("2) Add Cheese (premium)");
+            System.out.println("3) Add Regular Topping");
+            System.out.println("4) Done adding toppings");
+            int c = ranges("👉 Choice: ", 1, 4);
+            switch (c) {
+                case 1 -> addMeatTopping(sandwich);
+                case 2 -> addCheeseTopping(sandwich);
+                case 3 -> addRegularTopping(sandwich);
+                case 4 -> quit = true;
+                default -> System.out.println("Invalid input, please try again.\n");
             }
         }
     }
+    private int ranges(String choice, int min, int max) {
+        while (true) {
+            System.out.print(choice);
+            String input = scanner.next().trim();
+
+            int c;
+            try {
+                c = Integer.parseInt(input);
+            } catch (NumberFormatException e) {
+                System.out.printf("❌ Invalid input! Please enter a NUMBER between %d and %d.%n%n", min, max);
+                continue;
+            }
+
+            if (c < min || c > max) {
+                System.out.printf("❌ Please enter a number BETWEEN %d and %d.%n%n", min, max);
+                continue;
+            }
+
+            return c;
+        }
+    }
+
 }
 

@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4af5524a-d0b9-463c-afba-e2f61d623ba1" name="Changes" comment="implemented ReceiptFile class to handle creating a file to save order information.">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/common/Utility/Utility.java" afterDir="false" />
+    <list default="true" id="4af5524a-d0b9-463c-afba-e2f61d623ba1" name="Changes" comment="implemented breadType class to handle customer choice of bread.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/common/enums/BreadType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/common/enums/BreadType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/ui/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/ui/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/common/Utility/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/common/Utility/Utility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/ui/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/ui/UserInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -216,7 +212,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763060191006</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="implemented breadType class to handle customer choice of bread.">
+      <option name="closed" value="true" />
+      <created>1763075246525</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1763075246525</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -235,7 +239,8 @@
     <MESSAGE value="implemented Chip class to handle chip information." />
     <MESSAGE value="implemented order class to handle customer order information" />
     <MESSAGE value="implemented ReceiptFile class to handle creating a file to save order information." />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented ReceiptFile class to handle creating a file to save order information." />
+    <MESSAGE value="implemented breadType class to handle customer choice of bread." />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented breadType class to handle customer choice of bread." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
