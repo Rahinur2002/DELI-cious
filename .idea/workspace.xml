@@ -4,33 +4,89 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4af5524a-d0b9-463c-afba-e2f61d623ba1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="4af5524a-d0b9-463c-afba-e2f61d623ba1" name="Changes" comment="implemented ReceiptFile class to handle creating a file to save order information.">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/common/Utility/Utility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/common/enums/BreadType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/common/enums/BreadType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/ui/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/ui/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/ui/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/ui/UserInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="module-info" />
+        <option value="package-info" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Rahinur2002"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Rahinur2002/DELI-cious.git",
+    "accountId": "2e1aef95-2394-45a8-80bd-a9ee3a928058"
+  }
+}]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 8
 }]]></component>
   <component name="ProjectId" id="35DYdRp9D0vayuruzxpF1L1sI1a" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.App.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.pluralsight.deli.ui.App" />
+      <module name="DELI-cious" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pluralsight.deli.ui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.App" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -40,6 +96,160 @@
       <option name="presentableId" value="Default" />
       <updated>1762646196757</updated>
     </task>
+    <task id="LOCAL-00001" summary="Initial Commit and package created">
+      <option name="closed" value="true" />
+      <created>1762658026369</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1762658026369</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added all the classes">
+      <option name="closed" value="true" />
+      <created>1762794034573</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1762794034573</updated>
+    </task>
+    <task id="LOCAL-00003" summary="finished skeleton for order.">
+      <option name="closed" value="true" />
+      <created>1762797827126</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1762797827126</updated>
+    </task>
+    <task id="LOCAL-00004" summary="finished skeleton for product.">
+      <option name="closed" value="true" />
+      <created>1762799804810</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1762799804810</updated>
+    </task>
+    <task id="LOCAL-00005" summary="finished skeleton for sandwich class.">
+      <option name="closed" value="true" />
+      <created>1762800799144</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1762800799144</updated>
+    </task>
+    <task id="LOCAL-00006" summary="finished all the enu classes.">
+      <option name="closed" value="true" />
+      <created>1762800893336</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1762800893336</updated>
+    </task>
+    <task id="LOCAL-00007" summary="implemented sandwich class to handle the sandwich values.">
+      <option name="closed" value="true" />
+      <created>1762805103536</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1762805103536</updated>
+    </task>
+    <task id="LOCAL-00008" summary="implemented product abstract class.">
+      <option name="closed" value="true" />
+      <created>1762905478194</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1762905478194</updated>
+    </task>
+    <task id="LOCAL-00009" summary="implemented topping abstract class.">
+      <option name="closed" value="true" />
+      <created>1762906716055</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1762906716055</updated>
+    </task>
+    <task id="LOCAL-00010" summary="implemented regularTopping and premiumTopping with meat and cheese child class to handle all the toppings prices.">
+      <option name="closed" value="true" />
+      <created>1762909119596</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1762909119596</updated>
+    </task>
+    <task id="LOCAL-00011" summary="modified the sandwich class.">
+      <option name="closed" value="true" />
+      <created>1762969789658</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1762969789658</updated>
+    </task>
+    <task id="LOCAL-00012" summary="implemented Drink class to handle drink information.">
+      <option name="closed" value="true" />
+      <created>1762971405769</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1762971405769</updated>
+    </task>
+    <task id="LOCAL-00013" summary="implemented Chip class to handle chip information.">
+      <option name="closed" value="true" />
+      <created>1762971422803</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1762971422803</updated>
+    </task>
+    <task id="LOCAL-00014" summary="implemented order class to handle customer order information">
+      <option name="closed" value="true" />
+      <created>1763052381780</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1763052381780</updated>
+    </task>
+    <task id="LOCAL-00015" summary="implemented ReceiptFile class to handle creating a file to save order information.">
+      <option name="closed" value="true" />
+      <created>1763060191006</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1763060191006</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial Commit and package created" />
+    <MESSAGE value="Added all the classes" />
+    <MESSAGE value="finished skeleton for order." />
+    <MESSAGE value="finished skeleton for product." />
+    <MESSAGE value="finished skeleton for sandwich class." />
+    <MESSAGE value="finished all the enu classes." />
+    <MESSAGE value="implemented sandwich class to handle the sandwich values." />
+    <MESSAGE value="implemented product abstract class." />
+    <MESSAGE value="implemented topping abstract class." />
+    <MESSAGE value="implemented regularTopping and premiumTopping with meat and cheese child class to handle all the toppings prices." />
+    <MESSAGE value="modified the sandwich class." />
+    <MESSAGE value="implemented Drink class to handle drink information." />
+    <MESSAGE value="implemented Chip class to handle chip information." />
+    <MESSAGE value="implemented order class to handle customer order information" />
+    <MESSAGE value="implemented ReceiptFile class to handle creating a file to save order information." />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented ReceiptFile class to handle creating a file to save order information." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/pluralsight/deli/ui/App.java</url>
+          <line>3</line>
+          <properties class="com.pluralsight.deli.ui.App" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

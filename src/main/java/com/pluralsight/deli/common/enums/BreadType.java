@@ -4,7 +4,7 @@ public enum BreadType {
     WHITE("White Bread"),
     WHEAT("Wheat Bread"),
     RYE("Rye Bread)"),
-    WRAP("Tortilla Wrap");
+    WRAP("Wrap");
 
     private final String label;
 
