@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4af5524a-d0b9-463c-afba-e2f61d623ba1" name="Changes" comment="implemented breadType class to handle customer choice of bread.">
+    <list default="true" id="4af5524a-d0b9-463c-afba-e2f61d623ba1" name="Changes" comment="implemented sandwichSize class to handle customer choice of sandwich size.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/common/Utility/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/common/Utility/Utility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/ui/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/ui/UserInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -220,7 +219,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763075246525</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="implemented sandwichSize class to handle customer choice of sandwich size.">
+      <option name="closed" value="true" />
+      <created>1763078077772</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1763078077772</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -240,7 +247,8 @@
     <MESSAGE value="implemented order class to handle customer order information" />
     <MESSAGE value="implemented ReceiptFile class to handle creating a file to save order information." />
     <MESSAGE value="implemented breadType class to handle customer choice of bread." />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented breadType class to handle customer choice of bread." />
+    <MESSAGE value="implemented sandwichSize class to handle customer choice of sandwich size." />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented sandwichSize class to handle customer choice of sandwich size." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
