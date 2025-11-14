@@ -40,7 +40,7 @@ public class UserInterface {
             System.out.println("1. New Order.");
             System.out.println("0. Exit");
 
-            System.out.print("\uD83D\uDC49 Choice: ");
+            System.out.print("\uD83D\uDCE5➡\uFE0F Input: ");
             String choice = scanner.nextLine().trim();
 
             switch (choice) {
@@ -68,7 +68,7 @@ public class UserInterface {
             System.out.println("4. Checkout");
             System.out.println("0. Cancel Order & go back home page");
 
-            System.out.print("\uD83D\uDC49 Choice: ");
+            System.out.print("\uD83D\uDCE5➡\uFE0F Input: ");
             String choice = scanner.nextLine().trim();
 
             switch (choice) {
@@ -106,7 +106,7 @@ public class UserInterface {
         toppings(s);
 
         currentOrder.addSandwich(s);
-
+        System.out.println("✅ Sandwich added!");
     }
 
     public void addDrink() {
@@ -116,13 +116,12 @@ public class UserInterface {
         System.out.println("3. Large");
         System.out.println("4. Go Back");
 
-        int c = ranges("👉 Choice: ", 1, 4);
+        int c = ranges("\uD83D\uDCE5➡\uFE0F Input: ", 1, 4);
 
         if (c == 4) {
             goBack();
             return;
         }
-
         DrinkSize s = switch (c) {
             case 1 -> DrinkSize.SMALL;
             case 2 -> DrinkSize.MEDIUM;
@@ -147,7 +146,7 @@ public class UserInterface {
         System.out.println("3. Pringles");
         System.out.println("4. Go Back");
 
-        int c = ranges("👉 Choice: ", 1, 4);
+        int c = ranges("\uD83D\uDCE5➡\uFE0F Input: ", 1, 4);
 
         if (c == 4) {
             goBack();
@@ -160,7 +159,6 @@ public class UserInterface {
             case 3 -> "pringles";
             default -> throw new IllegalStateException("Unexpected value: " + c);
         };
-
 
         Chip chips = new Chip(s);
         currentOrder.addChip(chips);
@@ -176,15 +174,17 @@ public class UserInterface {
         System.out.println("\n" + CYAN + "=== ORDER SUMMARY ===" + RESET);
         System.out.println(currentOrder.printDisplay());
 
-        boolean confirm = yesOrNo("Confirm Checkout? Y/N: ");
-        if(!confirm) {
-            System.out.println("Checkout Cancelled, returning to menu......");
-            return;
+        System.out.println("1. Confirm Checkout");
+        System.out.println("2. Cancel Order");
+        String choice = scanner.nextLine().trim();
+
+        if(choice.equalsIgnoreCase("1")){
+            new ReceiptFile().saveReceipt(currentOrder);
+            System.out.printf("🎉 Thank you for coming in! Your total is $%.2f%n", currentOrder.getTotal());
+        }else if (choice.equalsIgnoreCase("2")) {
+            System.out.println("Cancelling Order");
+            currentOrder.cancelOrder();
         }
-
-        new ReceiptFile().saveReceipt(currentOrder);
-
-        System.out.printf("🎉 Thank you! Your total is $%.2f%n", currentOrder.getTotal());
     }
 
     private BreadType breadType() {
@@ -193,7 +193,7 @@ public class UserInterface {
             System.out.println("2️⃣  Wheat");
             System.out.println("3️⃣  Rye");
             System.out.println("4️⃣  Wrap");
-            int c = ranges("\uD83D\uDC49 Choice: ", 1, 4);
+            int c = ranges("\uD83D\uDCE5➡\uFE0F Input: ", 1, 4);
 
             return switch (c) {
                 case 1 -> BreadType.WHITE;
@@ -209,7 +209,7 @@ public class UserInterface {
             System.out.println("1️⃣  4 Inch");
             System.out.println("2️⃣  8 Inch");
             System.out.println("3️⃣  12 Inch");
-            int c = ranges("\uD83D\uDC49 Choice: ", 1, 3);
+            int c = ranges("\uD83D\uDCE5➡\uFE0F Input: ", 1, 3);
 
             return switch (c) {
                 case 1 -> SandwichSize.FOUR;
@@ -228,7 +228,7 @@ public class UserInterface {
             System.out.println("4. Add Sauces");
             System.out.println("5. Add Sides");
             System.out.println("6. Done adding toppings");
-            int c = ranges("👉 Choice: ", 1, 6);
+            int c = ranges("\uD83D\uDCE5➡\uFE0F Input:", 1, 6);
             switch (c) {
                 case 1 -> addMeatTopping(sandwich);
                 case 2 -> addCheeseTopping(sandwich);
@@ -247,13 +247,12 @@ public class UserInterface {
         System.out.println("2. Sauce");
         System.out.println("3. Go Back");
 
-        int c = ranges("👉 Choice: ", 1, 3);
+        int c = ranges("\uD83D\uDCE5➡\uFE0F Input: ", 1, 3);
 
         if (c == 3) {
             goBack();
             return;
         }
-
         String s = switch (c) {
             case 1 -> "Au Jus";
             case 2 -> "Sauce";
@@ -276,13 +275,12 @@ public class UserInterface {
         System.out.println("6. Vinaigrette");
         System.out.println("7. Go Back");
 
-        int c = ranges("👉 Choice: ", 1, 7);
+        int c = ranges("\uD83D\uDCE5➡\uFE0F Input: ", 1, 7);
 
         if (c == 7) {
             goBack();
             return;
         }
-
         String s = switch (c) {
             case 1 -> "mayo";
             case 2 -> "mustard";
@@ -312,13 +310,12 @@ public class UserInterface {
         System.out.println("9. Mushrooms");
         System.out.println("10. Go Back");
 
-        int c = ranges("👉 Choice: ", 1, 10);
+        int c = ranges("\uD83D\uDCE5➡\uFE0F Input: ", 1, 10);
 
         if (c == 10) {
             goBack();
             return;
         }
-
 
         String t = switch (c) {
             case 1 -> "lettuce";
@@ -346,7 +343,7 @@ public class UserInterface {
         System.out.println("3. Cheddar");
         System.out.println("4. Swiss");
         System.out.println("5. Go Back");
-        int c = ranges("👉 Choice: ", 1, 5);
+        int c = ranges("\uD83D\uDCE5➡\uFE0F Input: ", 1, 5);
 
         if (c == 5) {
             goBack();
@@ -379,7 +376,7 @@ public class UserInterface {
             System.out.println("5. Chicken");
             System.out.println("6. Bacon");
             System.out.println("7. Go Back");
-            int c = ranges("👉 Choice: ", 1, 7);
+            int c = ranges("\uD83D\uDCE5➡\uFE0F Input: ", 1, 7);
 
         if (c == 7) {
             goBack();
@@ -436,7 +433,7 @@ public class UserInterface {
     }
 
     public void goBack() {
-            System.out.println("Going Back...\n");
+            System.out.println("↩\uFE0F Going Back...\n");
         }
     }
 

@@ -19,7 +19,13 @@ public class Drink extends Product {
             case LARGE -> 3.00;
         };
     }
+
     public String printDisplay() {
-        return String.format("🥤 %s (%s) - $%.2f", getProductName(), size, getCost());
+        return String.format("\uD83E\uDD64 Drinks: %s (%s) - $%.2f", getProductName(), size, getCost());
+    }
+
+    @Override
+    public String toString() {
+        return printDisplay();
     }
 }

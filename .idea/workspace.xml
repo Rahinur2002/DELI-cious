@@ -4,8 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4af5524a-d0b9-463c-afba-e2f61d623ba1" name="Changes" comment="implemented RegularTopping class to handle regular toppings of the sandwich.">
+    <list default="true" id="4af5524a-d0b9-463c-afba-e2f61d623ba1" name="Changes" comment="implemented AddChip and addDrink methods to handle drinks and chips.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/common/Utility/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/common/Utility/Utility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/common/enums/BreadType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/common/enums/BreadType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/common/enums/DrinkSize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/common/enums/DrinkSize.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/common/enums/SandwichSize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/common/enums/SandwichSize.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/products/chips/Chip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/products/chips/Chip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/products/drinks/Drink.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/products/drinks/Drink.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/products/sandwiches/Sandwich.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/products/sandwiches/Sandwich.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/receipts/ReceiptFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/receipts/ReceiptFile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/ui/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/ui/UserInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -251,7 +259,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763089123152</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="implemented AddChip and addDrink methods to handle drinks and chips.">
+      <option name="closed" value="true" />
+      <created>1763090444782</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1763090444782</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -275,7 +291,8 @@
     <MESSAGE value="implemented Topping class to topping of the sandwich." />
     <MESSAGE value="implemented PremiumTopping class to handle premium toppings of the sandwich." />
     <MESSAGE value="implemented RegularTopping class to handle regular toppings of the sandwich." />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented RegularTopping class to handle regular toppings of the sandwich." />
+    <MESSAGE value="implemented AddChip and addDrink methods to handle drinks and chips." />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented AddChip and addDrink methods to handle drinks and chips." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

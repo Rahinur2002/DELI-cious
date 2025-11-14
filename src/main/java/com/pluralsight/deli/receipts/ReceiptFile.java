@@ -1,11 +1,8 @@
 package com.pluralsight.deli.receipts;
 
 import com.pluralsight.deli.orders.Order;
-import com.pluralsight.deli.products.Product;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -16,21 +13,21 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class ReceiptFile {
-    private static final DateTimeFormatter NAME_FMT = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss");
+    private static final DateTimeFormatter DT_FMT = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss");
 
     public Path saveReceipt(Order order) {
         try {
             Path dir = Paths.get("receipts");
             Files.createDirectories(dir);
 
-            String fileName = NAME_FMT.format(LocalDateTime.now()) + ".txt";
-            Path out = dir.resolve(fileName);
+            String fileName = DT_FMT.format(LocalDateTime.now()) + ".txt";
+            Path combined = dir.resolve(fileName);
 
-        try (BufferedWriter bw = Files.newBufferedWriter(out, StandardCharsets.UTF_8, StandardOpenOption.CREATE_NEW)) {
+        try (BufferedWriter bw = Files.newBufferedWriter(combined, StandardCharsets.UTF_8, StandardOpenOption.CREATE_NEW)) {
             bw.write(order.printDisplay());
         }
-            System.out.println("✅ Receipt saved: " + out.toAbsolutePath());
-            return out;
+            System.out.println("✅ Receipt saved: " + combined.toAbsolutePath());
+            return combined;
         } catch (IOException e) {
             throw new RuntimeException("❌ Error saving the receipt", e);
         }

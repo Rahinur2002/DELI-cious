@@ -6,13 +6,6 @@ public enum BreadType {
     RYE("Rye Bread)"),
     WRAP("Wrap");
 
-    private final String label;
-
     BreadType(String label) {
-        this.label = label;
-    }
-
-    public String getLabel(){
-        return label;
     }
 }

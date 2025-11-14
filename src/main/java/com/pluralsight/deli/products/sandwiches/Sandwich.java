@@ -33,24 +33,13 @@ public class Sandwich extends Product {
         return Collections.unmodifiableList(sandwichToppings);
     }
 
-//    public void setSandwichToppings(List<Topping> sandwichToppings) {
-//        this.sandwichToppings = sandwichToppings;
-//    }
-
     public boolean isToasted() {
         return isToasted;
     }
 
-    public void setToasted(boolean toasted) {
-        isToasted = toasted;
-    }
 
     public BreadType getBread() {
         return bread;
-    }
-
-    public void setBread(BreadType bread) {
-        this.bread = bread;
     }
 
     public SandwichSize getSandwichSize() {
@@ -83,19 +72,25 @@ public class Sandwich extends Product {
         return originalPrice + toppingCost;
     }
 
-    public String printDisplay(){
+    public String printDisplay() {
         String sandwich = sandwichToppings.isEmpty() ? "(\uD83D\uDEAB no toppings)" : sandwichToppings.stream()
                 .map(Object::toString).collect(Collectors.joining(", "));
 
         return String.format("""
-            🥪 %s (%s, %s)
-            🔥 Toasted: %s
-            🍞 Bread: %s
-            🧂 Toppings: %s
-            💵 Total: $%.2f
-            """,
-                getProductName(), sandwichSize, bread, isToasted ? "Yes" : "No",
-                sandwich, getCost());
+             🥪 Sandwich: %s
+             📏 Size: %s
+             🍞 Bread: %s
+             🔥 Toasted: %s
+             🧀 Toppings: %s
+             💲 Total: $%.2f
+             """,
+                getProductName(),
+                sandwichSize,
+                bread,
+                isToasted ? "Yes" : "No",
+                sandwichToppings,
+                getCost()
+        );
     }
 
     @Override
