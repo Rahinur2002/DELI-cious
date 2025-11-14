@@ -12,6 +12,7 @@ import com.pluralsight.deli.products.sandwiches.toppings.Sauce;
 import com.pluralsight.deli.products.sandwiches.toppings.Side;
 import com.pluralsight.deli.products.sandwiches.toppings.premium.Cheese;
 import com.pluralsight.deli.products.sandwiches.toppings.premium.Meat;
+import com.pluralsight.deli.receipts.ReceiptFile;
 
 import java.util.Scanner;
 
@@ -168,11 +169,25 @@ public class UserInterface {
     }
 
     public void checkout() {
+        if(currentOrder == null) {
+            System.out.println("No current order");
+            return;
+        }
+        System.out.println("\n" + CYAN + "=== ORDER SUMMARY ===" + RESET);
+        System.out.println(currentOrder.printDisplay());
 
+        boolean confirm = yesOrNo("Confirm Checkout? Y/N: ");
+        if(!confirm) {
+            System.out.println("Checkout Cancelled, returning to menu......");
+            return;
+        }
+
+        new ReceiptFile().saveReceipt(currentOrder);
+
+        System.out.printf("🎉 Thank you! Your total is $%.2f%n", currentOrder.getTotal());
     }
 
     private BreadType breadType() {
-        while (true) {
             System.out.println(YELLOW + "\uD83E\uDD56 Please select your bread type:" + RESET);
             System.out.println("1️⃣  White");
             System.out.println("2️⃣  Wheat");
@@ -187,11 +202,9 @@ public class UserInterface {
                 case 4 -> BreadType.WRAP;
                 default -> throw new IllegalStateException("Unexpected value: " + c);
             };
-        }
     }
 
     private SandwichSize sandwichSize(){
-        while (true) {
             System.out.println(YELLOW + "Please select your sandwich size:" + RESET);
             System.out.println("1️⃣  4 Inch");
             System.out.println("2️⃣  8 Inch");
@@ -204,7 +217,6 @@ public class UserInterface {
                 case 3 -> SandwichSize.TWELVE;
                 default -> throw new IllegalStateException("Unexpected value: " + c);
             };
-        }
     }
     private void toppings(Sandwich sandwich) {
         boolean quit = false;
@@ -424,7 +436,7 @@ public class UserInterface {
     }
 
     public void goBack() {
-            System.out.println("Returning to toppings menu...\n");
+            System.out.println("Going Back...\n");
         }
     }
 

@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4af5524a-d0b9-463c-afba-e2f61d623ba1" name="Changes" comment="implemented Topping class to topping of the sandwich.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/products/sandwiches/toppings/Sauce.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/products/sandwiches/toppings/Side.java" afterDir="false" />
+    <list default="true" id="4af5524a-d0b9-463c-afba-e2f61d623ba1" name="Changes" comment="implemented RegularTopping class to handle regular toppings of the sandwich.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/ui/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/ui/UserInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -236,7 +235,23 @@
       <option name="project" value="LOCAL" />
       <updated>1763084611020</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="implemented PremiumTopping class to handle premium toppings of the sandwich.">
+      <option name="closed" value="true" />
+      <created>1763087368684</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1763087368684</updated>
+    </task>
+    <task id="LOCAL-00020" summary="implemented RegularTopping class to handle regular toppings of the sandwich.">
+      <option name="closed" value="true" />
+      <created>1763089123152</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1763089123152</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -258,7 +273,9 @@
     <MESSAGE value="implemented breadType class to handle customer choice of bread." />
     <MESSAGE value="implemented sandwichSize class to handle customer choice of sandwich size." />
     <MESSAGE value="implemented Topping class to topping of the sandwich." />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented Topping class to topping of the sandwich." />
+    <MESSAGE value="implemented PremiumTopping class to handle premium toppings of the sandwich." />
+    <MESSAGE value="implemented RegularTopping class to handle regular toppings of the sandwich." />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented RegularTopping class to handle regular toppings of the sandwich." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
