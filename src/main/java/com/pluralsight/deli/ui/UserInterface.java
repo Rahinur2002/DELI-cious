@@ -204,6 +204,15 @@ public class UserInterface {
             System.out.println("No current order");
             return;
         }
+
+        boolean hasSandwitch = currentOrder.getProducts().stream().anyMatch(p ->(p instanceof Sandwich));
+
+        boolean hasSide = currentOrder.getProducts().stream().anyMatch(p ->(p instanceof Drink) || (p instanceof Chip));
+
+        if(!hasSandwitch && !hasSide) {
+            System.out.println("Please buy a chip or a drink, if there are 0 sandwitch in your order");
+            return;
+        }
         System.out.println("\n" + CYAN + "=== ORDER SUMMARY ===" + RESET);
         System.out.println(currentOrder.printDisplay());
 

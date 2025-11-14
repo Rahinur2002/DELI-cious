@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4af5524a-d0b9-463c-afba-e2f61d623ba1" name="Changes" comment="implemented checkout method so the user can check out and complete the payment.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/products/sandwiches/signature/BLTSandwich.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/products/sandwiches/signature/PCSSandwich.java" afterDir="false" />
+    <list default="true" id="4af5524a-d0b9-463c-afba-e2f61d623ba1" name="Changes" comment="refactored the addSandwich to handle the signature sandwiches">
+      <change afterPath="$PROJECT_DIR$/images/classdiagramfinal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/sand1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/sand2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/ui/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/ui/UserInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,12 +62,21 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/pluralsight/java-development/capstones/DELI-cious",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\pluralsight\java-development\capstones\DELI-cious" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\pluralsight\java-development\capstones\DELI-cious\images" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.pluralsight.deli.ui.App" />
@@ -278,11 +290,26 @@
       <option name="project" value="LOCAL" />
       <updated>1763096381362</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="implemented signature package, BLTSandwich class and PCSSandwich class">
+      <option name="closed" value="true" />
+      <created>1763096529137</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1763096529137</updated>
+    </task>
+    <task id="LOCAL-00025" summary="refactored the addSandwich to handle the signature sandwiches">
+      <option name="closed" value="true" />
+      <created>1763098907563</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1763098907563</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial Commit and package created" />
     <MESSAGE value="Added all the classes" />
     <MESSAGE value="finished skeleton for order." />
     <MESSAGE value="finished skeleton for product." />
@@ -306,21 +333,8 @@
     <MESSAGE value="implemented AddSides and addSauces methods to handle sides and sauces ." />
     <MESSAGE value="implemented Acheckout method so the user can check out and complete the payment." />
     <MESSAGE value="implemented checkout method so the user can check out and complete the payment." />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented checkout method so the user can check out and complete the payment." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/pluralsight/deli/ui/App.java</url>
-          <line>3</line>
-          <properties class="com.pluralsight.deli.ui.App" method="main">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="implemented signature package, BLTSandwich class and PCSSandwich class" />
+    <MESSAGE value="refactored the addSandwich to handle the signature sandwiches" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored the addSandwich to handle the signature sandwiches" />
   </component>
 </project>
