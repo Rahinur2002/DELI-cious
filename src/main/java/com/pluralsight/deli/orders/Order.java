@@ -36,11 +36,6 @@ public class Order {
         return products.stream().mapToDouble(Product::getCost).sum();
     }
 
-    public void checkout(){
-        System.out.println(printDisplay());
-        System.out.printf("✅ Order checked out. TOTAL: $%.2f%n", getTotal());
-    }
-
     public void cancelOrder(){
         products.clear();
     }

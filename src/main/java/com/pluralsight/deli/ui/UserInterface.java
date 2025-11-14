@@ -7,6 +7,8 @@ import com.pluralsight.deli.orders.Order;
 import com.pluralsight.deli.products.chips.Chip;
 import com.pluralsight.deli.products.drinks.Drink;
 import com.pluralsight.deli.products.sandwiches.Sandwich;
+import com.pluralsight.deli.products.sandwiches.signature.BLTSandwich;
+import com.pluralsight.deli.products.sandwiches.signature.PCSSandwich;
 import com.pluralsight.deli.products.sandwiches.toppings.RegularTopping;
 import com.pluralsight.deli.products.sandwiches.toppings.Sauce;
 import com.pluralsight.deli.products.sandwiches.toppings.Side;
@@ -86,7 +88,7 @@ public class UserInterface {
                     quit = true;
                     break;
                 case "0":
-                    if(currentOrder != null) currentOrder.cancelOrder();
+                    if (currentOrder != null) currentOrder.cancelOrder();
                     System.out.println("\uD83D\uDDD1\uFE0F Order cancelled");
                     quit = true;
                     break;
@@ -97,14 +99,45 @@ public class UserInterface {
     }
 
     public void addSandwich() {
-        printHeader("Build Your Sandwich");
-        SandwichSize size = sandwichSize();
-        BreadType bread = breadType();
-        boolean isToasted = yesOrNo("Toasted? Y/N: ");
+        printHeader("Sandwich Menu: ");
+        System.out.println("1. Make Your Own Sandwich");
+        System.out.println("2. BLT Sandwich");
+        System.out.println("3. Philly Cheese Steak Sandwich");
+        System.out.println("4. Go Back");
 
-        Sandwich s = new Sandwich("Custom Sandwich", size, bread, isToasted);
-        toppings(s);
+        int c = ranges("\uD83D\uDCE5➡\uFE0F Input: ", 1, 4);
 
+        Sandwich s = null;
+        switch (c) {
+            case 1 -> {
+                printHeader("Build Your Sandwich");
+                SandwichSize size = sandwichSize();
+                BreadType bread = breadType();
+                boolean isToasted = yesOrNo("Toasted? Y/N: ");
+                s = new Sandwich("Custom Sandwich", size, bread, isToasted);
+                toppings(s);
+            }
+            case 2 -> {
+                s = new BLTSandwich();
+                System.out.println("BLT Sandwich added!");
+                boolean customize = yesOrNo("Do you want to customize the sandwich? Y/N: ");
+                if (customize) {
+                    toppings(s);
+                }
+            }
+            case 3 -> {
+                s = new PCSSandwich();
+                System.out.println("Philly Cheese Steak Sandwitch added!");
+                boolean customize = yesOrNo("Do you want to customize the sandwich? Y/N: ");
+                if (customize) {
+                    toppings(s);
+                }
+            }
+            case 4 -> {
+                goBack();
+                return;
+            }
+    }
         currentOrder.addSandwich(s);
         System.out.println("✅ Sandwich added!");
     }

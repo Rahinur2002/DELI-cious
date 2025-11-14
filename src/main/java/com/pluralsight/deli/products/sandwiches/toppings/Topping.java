@@ -9,9 +9,6 @@ public abstract class Topping {
         this.name = name;
     }
 
-    public String getName(){
-        return name;
-    }
 
     public abstract double getPrice(SandwichSize s);
 
