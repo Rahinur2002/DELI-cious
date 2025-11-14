@@ -1,8 +1,11 @@
 package com.pluralsight.deli.ui;
 
 import com.pluralsight.deli.common.enums.BreadType;
+import com.pluralsight.deli.common.enums.DrinkSize;
 import com.pluralsight.deli.common.enums.SandwichSize;
 import com.pluralsight.deli.orders.Order;
+import com.pluralsight.deli.products.chips.Chip;
+import com.pluralsight.deli.products.drinks.Drink;
 import com.pluralsight.deli.products.sandwiches.Sandwich;
 import com.pluralsight.deli.products.sandwiches.toppings.RegularTopping;
 import com.pluralsight.deli.products.sandwiches.toppings.Sauce;
@@ -106,11 +109,62 @@ public class UserInterface {
     }
 
     public void addDrink() {
+        System.out.println(YELLOW + "Select The Size Of The Drink:" + RESET);
+        System.out.println("1. Small");
+        System.out.println("2. Medium");
+        System.out.println("3. Large");
+        System.out.println("4. Go Back");
 
+        int c = ranges("👉 Choice: ", 1, 4);
+
+        if (c == 4) {
+            goBack();
+            return;
+        }
+
+        DrinkSize s = switch (c) {
+            case 1 -> DrinkSize.SMALL;
+            case 2 -> DrinkSize.MEDIUM;
+            case 3 -> DrinkSize.LARGE;
+            default -> throw new IllegalStateException("Unexpected value: " + c);
+        };
+
+        System.out.println("Enter the flavor you want: ");
+        String flavor = scanner.nextLine().trim();
+        if (flavor.isEmpty()) flavor = "Drink";
+
+        Drink drinks = new Drink(flavor, s);
+        currentOrder.addDrink(drinks);
+
+        System.out.printf("✅ Added %s (%s).%n", flavor, s);
     }
 
     public void addChip() {
+        System.out.println(YELLOW + "Select The Chips You Want: " + RESET);
+        System.out.println("1. Doritos");
+        System.out.println("2. Cheetos");
+        System.out.println("3. Pringles");
+        System.out.println("4. Go Back");
 
+        int c = ranges("👉 Choice: ", 1, 4);
+
+        if (c == 4) {
+            goBack();
+            return;
+        }
+
+        String s = switch (c) {
+            case 1 -> "doritos";
+            case 2 -> "Cheetos";
+            case 3 -> "pringles";
+            default -> throw new IllegalStateException("Unexpected value: " + c);
+        };
+
+
+        Chip chips = new Chip(s);
+        currentOrder.addChip(chips);
+
+        System.out.printf("✅ Added %s.%n", s);
     }
 
     public void checkout() {
