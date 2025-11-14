@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4af5524a-d0b9-463c-afba-e2f61d623ba1" name="Changes" comment="implemented AddChip and addDrink methods to handle drinks and chips.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/common/Utility/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/common/Utility/Utility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/common/enums/BreadType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/common/enums/BreadType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/common/enums/DrinkSize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/common/enums/DrinkSize.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/common/enums/SandwichSize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/common/enums/SandwichSize.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/products/chips/Chip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/products/chips/Chip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/products/drinks/Drink.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/products/drinks/Drink.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/products/sandwiches/Sandwich.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/products/sandwiches/Sandwich.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/receipts/ReceiptFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/receipts/ReceiptFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/ui/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/ui/UserInterface.java" afterDir="false" />
+    <list default="true" id="4af5524a-d0b9-463c-afba-e2f61d623ba1" name="Changes" comment="implemented checkout method so the user can check out and complete the payment.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/products/sandwiches/signature/BLTSandwich.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/deli/products/sandwiches/signature/PCSSandwich.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +38,9 @@
     "accountId": "2e1aef95-2394-45a8-80bd-a9ee3a928058"
   }
 }]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/pluralsight/deli/ui/UserInterface.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 8
 }]]></component>
@@ -267,7 +262,23 @@
       <option name="project" value="LOCAL" />
       <updated>1763090444782</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="implemented AddSides and addSauces methods to handle sides and sauces .">
+      <option name="closed" value="true" />
+      <created>1763093658530</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1763093658530</updated>
+    </task>
+    <task id="LOCAL-00023" summary="implemented checkout method so the user can check out and complete the payment.">
+      <option name="closed" value="true" />
+      <created>1763096381362</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1763096381362</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -292,7 +303,10 @@
     <MESSAGE value="implemented PremiumTopping class to handle premium toppings of the sandwich." />
     <MESSAGE value="implemented RegularTopping class to handle regular toppings of the sandwich." />
     <MESSAGE value="implemented AddChip and addDrink methods to handle drinks and chips." />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented AddChip and addDrink methods to handle drinks and chips." />
+    <MESSAGE value="implemented AddSides and addSauces methods to handle sides and sauces ." />
+    <MESSAGE value="implemented Acheckout method so the user can check out and complete the payment." />
+    <MESSAGE value="implemented checkout method so the user can check out and complete the payment." />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented checkout method so the user can check out and complete the payment." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
