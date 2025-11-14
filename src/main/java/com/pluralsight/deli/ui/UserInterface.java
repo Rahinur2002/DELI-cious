@@ -4,11 +4,12 @@ import com.pluralsight.deli.common.enums.BreadType;
 import com.pluralsight.deli.common.enums.SandwichSize;
 import com.pluralsight.deli.orders.Order;
 import com.pluralsight.deli.products.sandwiches.Sandwich;
-import com.pluralsight.deli.products.sandwiches.toppings.Topping;
+import com.pluralsight.deli.products.sandwiches.toppings.RegularTopping;
+import com.pluralsight.deli.products.sandwiches.toppings.Sauce;
+import com.pluralsight.deli.products.sandwiches.toppings.Side;
 import com.pluralsight.deli.products.sandwiches.toppings.premium.Cheese;
 import com.pluralsight.deli.products.sandwiches.toppings.premium.Meat;
 
-import java.util.Calendar;
 import java.util.Scanner;
 
 import static com.pluralsight.deli.common.Utility.Utility.printHeader;
@@ -95,10 +96,12 @@ public class UserInterface {
         printHeader("Build Your Sandwich");
         SandwichSize size = sandwichSize();
         BreadType bread = breadType();
-        boolean isToasted = false;
+        boolean isToasted = yesOrNo("Toasted? Y/N: ");
 
         Sandwich s = new Sandwich("Custom Sandwich", size, bread, isToasted);
         toppings(s);
+
+        currentOrder.addSandwich(s);
 
     }
 
@@ -153,32 +156,136 @@ public class UserInterface {
         boolean quit = false;
         while(!quit) {
             System.out.println(CYAN + "=== Choose Toppings ===" + RESET);
-            System.out.println("1) Add Meat (premium)");
-            System.out.println("2) Add Cheese (premium)");
-            System.out.println("3) Add Regular Topping");
-            System.out.println("4) Done adding toppings");
-            int c = ranges("👉 Choice: ", 1, 4);
+            System.out.println("1. Add Meat (premium)");
+            System.out.println("2. Add Cheese (premium)");
+            System.out.println("3. Add Regular Topping");
+            System.out.println("4. Add Sauces");
+            System.out.println("5. Add Sides");
+            System.out.println("6. Done adding toppings");
+            int c = ranges("👉 Choice: ", 1, 6);
             switch (c) {
                 case 1 -> addMeatTopping(sandwich);
                 case 2 -> addCheeseTopping(sandwich);
                 case 3 -> addRegularTopping(sandwich);
-                case 4 -> quit = true;
+                case 4 -> addSauces(sandwich);
+                case 5 -> addSides(sandwich);
+                case 6 -> quit = true;
                 default -> System.out.println("Invalid input, please try again.\n");
             }
         }
     }
 
-    private void addRegularTopping(Sandwich sandwich){
+    private void addSides(Sandwich sandwich){
+        System.out.println(YELLOW + "Select Sides:" + RESET);
+        System.out.println("1. Au Jus");
+        System.out.println("2. Sauce");
+        System.out.println("3. Go Back");
 
+        int c = ranges("👉 Choice: ", 1, 3);
+
+        if (c == 3) {
+            goBack();
+            return;
+        }
+
+        String s = switch (c) {
+            case 1 -> "Au Jus";
+            case 2 -> "Sauce";
+            default -> throw new IllegalStateException("Unexpected value: " + c);
+        };
+
+        Side sides = new Side(s);
+        sandwich.addTopping(sides);
+
+        System.out.printf("✅ Added %s.%n", s);
+    }
+
+    private void addSauces(Sandwich sandwich) {
+        System.out.println(YELLOW + "Select Sauces:" + RESET);
+        System.out.println("1. Mayo");
+        System.out.println("2. Mustard");
+        System.out.println("3. Ketchup");
+        System.out.println("4. Ranch");
+        System.out.println("5. Thousand Islands");
+        System.out.println("6. Vinaigrette");
+        System.out.println("7. Go Back");
+
+        int c = ranges("👉 Choice: ", 1, 7);
+
+        if (c == 7) {
+            goBack();
+            return;
+        }
+
+        String s = switch (c) {
+            case 1 -> "mayo";
+            case 2 -> "mustard";
+            case 3 -> "ketchup";
+            case 4 -> "ranch";
+            case 5 -> "thousand islands";
+            case 6 -> "vinaigrette";
+            default -> throw new IllegalStateException("Unexpected value: " + c);
+        };
+
+        Sauce sauces = new Sauce(s);
+        sandwich.addTopping(sauces);
+
+        System.out.printf("✅ Added %s.%n", s);
+    }
+
+    private void addRegularTopping(Sandwich sandwich){
+        System.out.println(YELLOW + "Select a regular topping:" + RESET);
+        System.out.println("1. Lettuce");
+        System.out.println("2. Peppers");
+        System.out.println("3. Onions");
+        System.out.println("4. Tomatoes");
+        System.out.println("5. Jalapeños");
+        System.out.println("6. Cucumbers");
+        System.out.println("7. Pickles");
+        System.out.println("8. Guacamole");
+        System.out.println("9. Mushrooms");
+        System.out.println("10. Go Back");
+
+        int c = ranges("👉 Choice: ", 1, 10);
+
+        if (c == 10) {
+            goBack();
+            return;
+        }
+
+
+        String t = switch (c) {
+            case 1 -> "lettuce";
+            case 2 -> "peppers";
+            case 3 -> "onions";
+            case 4 -> "tomatoes";
+            case 5 -> "jalapenos";
+            case 6 -> "cucumbers";
+            case 7 -> "pickles";
+            case 8 -> "guacamole";
+            case 9 -> "mushrooms";
+            default -> throw new IllegalStateException("Unexpected value: " + c);
+        };
+
+        RegularTopping topping = new RegularTopping(t);
+        sandwich.addTopping(topping);
+
+        System.out.printf("✅ Added %s.%n", t);
     }
 
     private void addCheeseTopping(Sandwich sandwich){
         System.out.println(YELLOW + "Select a cheese:" + RESET);
-        System.out.println("1) American");
-        System.out.println("2) Provolone");
-        System.out.println("3) Cheddar");
-        System.out.println("4) Swiss");
-        int c = ranges("👉 Choice: ", 1, 4);
+        System.out.println("1. American");
+        System.out.println("2. Provolone");
+        System.out.println("3. Cheddar");
+        System.out.println("4. Swiss");
+        System.out.println("5. Go Back");
+        int c = ranges("👉 Choice: ", 1, 5);
+
+        if (c == 5) {
+            goBack();
+            return;
+        }
 
         String ch = switch (c) {
             case 1 -> "american";
@@ -193,19 +300,25 @@ public class UserInterface {
         Cheese cheese = new Cheese(ch, extra);
         sandwich.addTopping(cheese);
 
-        System.out.printf("✅ Added %s%s.%n",
-                extra ? "extra " : "", ch);
+        System.out.printf("✅ Added %s%s%s%n",
+                extra ? "extra " : "", ch, " cheese.");
     }
 
     private void addMeatTopping(Sandwich sandwich){
             System.out.println(YELLOW + "Select a meat:" + RESET);
-            System.out.println("1) Steak");
-            System.out.println("2) Ham");
-            System.out.println("3) Salami");
-            System.out.println("4) Roast Beef");
-            System.out.println("5) Chicken");
-            System.out.println("6) Bacon");
-            int c = ranges("👉 Choice: ", 1, 6);
+            System.out.println("1. Steak");
+            System.out.println("2. Ham");
+            System.out.println("3. Salami");
+            System.out.println("4. Roast Beef");
+            System.out.println("5. Chicken");
+            System.out.println("6. Bacon");
+            System.out.println("7. Go Back");
+            int c = ranges("👉 Choice: ", 1, 7);
+
+        if (c == 7) {
+            goBack();
+            return;
+        }
 
             String m = switch (c) {
                 case 1 -> "steak";
@@ -256,5 +369,10 @@ public class UserInterface {
         }
     }
 
-}
+    public void goBack() {
+            System.out.println("Returning to toppings menu...\n");
+        }
+    }
+
+
 
